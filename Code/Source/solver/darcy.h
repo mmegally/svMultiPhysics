@@ -26,18 +26,18 @@
  * \f]
  *
  * The model quantities and their admissible ranges are:
- * - \f$p\f$: pressure unknown.
- * - \f$\boldsymbol{q}\f$: derived Darcy velocity.
- * - \f$K\f$: configured intrinsic scalar permeability. `Darcy_permeability`
+ * - \f$p\f$: pressure unknown [M/L/T^2].
+ * - \f$\boldsymbol{q}\f$: derived Darcy velocity [L/T].
+ * - \f$K\f$: configured intrinsic scalar permeability [L^2]. `Darcy_permeability`
  *   defaults to \f$10^{-15}\f$ and must satisfy \f$K > 0\f$.
- * - \f$\mu\f$: configured dynamic viscosity. `Darcy_fluid_viscosity` defaults
+ * - \f$\mu\f$: configured dynamic viscosity [M/L/T]. `Darcy_fluid_viscosity` defaults
  *   to 1 and must satisfy \f$\mu > 0\f$.
- * - \f$\rho\f$: configured reference fluid density. `Fluid_density` defaults
+ * - \f$\rho\f$: configured reference fluid density [M/L^3]. `Fluid_density` defaults
  *   to 0.5 and must satisfy \f$\rho > 0\f$.
- * - \f$\beta\f$: configured storage/compressibility.
- *   `Darcy_media_compressibility` defaults to 0 and must satisfy
+ * - \f$\beta\f$: configured storage/compressibility [L*T^2/M].
+ *   `Darcy_compressibility` defaults to 0 and must satisfy
  *   \f$\beta \ge 0\f$.
- * - \f$s\f$: configured volumetric source provided by `Source_term`; it
+ * - \f$s\f$: configured volumetric source provided by `Source_term` [1/T]; it
  *   defaults to 0 and is constant within each configured domain.
  *
  * @par Darcy flux output

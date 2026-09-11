@@ -69,7 +69,6 @@ void b_darcy(ComMod& com_mod, const int eNoN, const double w, const Vector<doubl
 
 void construct_darcy(ComMod& com_mod, const mshType& lM, const SolutionStates& solutions)
 {
-  validate_element_support(lM);
 
   const auto& Ag = solutions.intermediate.get_acceleration();
   const auto& Yg = solutions.intermediate.get_velocity();
