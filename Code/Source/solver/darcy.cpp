@@ -45,7 +45,7 @@ void validate_material_properties(const dmnType& domain)
            "a value greater than zero");
 
   const double compressibility =
-      domain.prop.at(PhysicalPropertyType::Darcy_compressibility);
+      domain.prop.at(PhysicalPropertyType::darcy_compressibility);
   validate("Darcy_compressibility", compressibility,
            compressibility >= 0.0,
            "a value greater than or equal to zero");
@@ -176,7 +176,7 @@ void darcy_2d(ComMod& com_mod, const int eNoN, const double w, const Vector<doub
 
   double k = dmn.prop.at(PhysicalPropertyType::darcy_permeability);
   double source = dmn.prop.at(PhysicalPropertyType::source_term);
-  double beta_0 = dmn.prop.at(PhysicalPropertyType::Darcy_compressibility);
+  double beta_0 = dmn.prop.at(PhysicalPropertyType::darcy_compressibility);
   double rho_0 = dmn.prop.at(PhysicalPropertyType::fluid_density);
   double mu = dmn.prop.at(PhysicalPropertyType::darcy_fluid_viscosity);
 
@@ -235,7 +235,7 @@ void darcy_3d(ComMod& com_mod, const int eNoN, const double w, const Vector<doub
 
   double k = dmn.prop.at(PhysicalPropertyType::darcy_permeability);
   double source = dmn.prop.at(PhysicalPropertyType::source_term);
-  double beta_0 = dmn.prop.at(PhysicalPropertyType::Darcy_compressibility);
+  double beta_0 = dmn.prop.at(PhysicalPropertyType::darcy_compressibility);
   double rho_0 = dmn.prop.at(PhysicalPropertyType::fluid_density);
   double mu = dmn.prop.at(PhysicalPropertyType::darcy_fluid_viscosity);
 
