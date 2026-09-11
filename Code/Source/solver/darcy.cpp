@@ -147,7 +147,7 @@ void construct_darcy(ComMod& com_mod, const mshType& lM, const SolutionStates& s
       } else if (insd == 2) {
         darcy_2d(com_mod, eNoN, w, N, Nx, al, yl, lR, lK);
       } else {
-        throw std::InvalidArgumentException("[construct_darcy] insd must be 2 or 3.");
+        svmp::raise<svmp::InvalidArgumentException>("[construct_darcy] insd must be 2 or 3.");
       }
     }
 
