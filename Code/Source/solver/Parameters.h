@@ -1662,7 +1662,7 @@ class DomainParameters : public ParameterLists
     Parameter<double> time_step_for_integration;
     
     Parameter<double> darcy_permeability;
-    Parameter<double> darcy_media_compressibility;
+    Parameter<double> darcy_compressibility;
     Parameter<double> darcy_fluid_viscosity;
 
     // Inverse permeability K^{-1} used in the Brinkman drag term

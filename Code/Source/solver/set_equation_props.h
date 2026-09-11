@@ -287,7 +287,7 @@ SetEquationPropertiesMapType set_equation_props = {
     propL[0][0] = PhysicalPropertyType::darcy_permeability;
     propL[1][0] = PhysicalPropertyType::source_term;
     propL[2][0] = PhysicalPropertyType::fluid_density;
-    propL[3][0] = PhysicalPropertyType::darcy_media_compressibility;
+    propL[3][0] = PhysicalPropertyType::darcy_compressibility;
     propL[4][0] = PhysicalPropertyType::darcy_fluid_viscosity;
 
     read_domain(simulation, eq_params, lEq, propL);

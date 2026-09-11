@@ -45,8 +45,8 @@ void validate_material_properties(const dmnType& domain)
            "a value greater than zero");
 
   const double compressibility =
-      domain.prop.at(PhysicalPropertyType::darcy_media_compressibility);
-  validate("Darcy_media_compressibility", compressibility,
+      domain.prop.at(PhysicalPropertyType::Darcy_compressibility);
+  validate("Darcy_compressibility", compressibility,
            compressibility >= 0.0,
            "a value greater than or equal to zero");
 }
@@ -134,7 +134,7 @@ void construct_darcy(ComMod& com_mod, const mshType& lM, const SolutionStates& s
         auto Nx_g = lM.Nx.slice(g);
         nn::gnn(eNoN, nsd, insd, Nx_g, xl, Nx, Jac, ksix);
         if (utils::is_zero(Jac)) {
-          throw std::runtime_error(
+          svmp::raise<svmp::InternalError>(
               "[construct_darcy] Jacobian for element " + std::to_string(e) + " is < 0.");
         }
       }
@@ -147,7 +147,7 @@ void construct_darcy(ComMod& com_mod, const mshType& lM, const SolutionStates& s
       } else if (insd == 2) {
         darcy_2d(com_mod, eNoN, w, N, Nx, al, yl, lR, lK);
       } else {
-        throw std::runtime_error("[construct_darcy] insd must be 2 or 3.");
+        throw std::InvalidArgumentException("[construct_darcy] insd must be 2 or 3.");
       }
     }
 
@@ -176,7 +176,7 @@ void darcy_2d(ComMod& com_mod, const int eNoN, const double w, const Vector<doub
 
   double k = dmn.prop.at(PhysicalPropertyType::darcy_permeability);
   double source = dmn.prop.at(PhysicalPropertyType::source_term);
-  double beta_0 = dmn.prop.at(PhysicalPropertyType::darcy_media_compressibility);
+  double beta_0 = dmn.prop.at(PhysicalPropertyType::Darcy_compressibility);
   double rho_0 = dmn.prop.at(PhysicalPropertyType::fluid_density);
   double mu = dmn.prop.at(PhysicalPropertyType::darcy_fluid_viscosity);
 
@@ -235,7 +235,7 @@ void darcy_3d(ComMod& com_mod, const int eNoN, const double w, const Vector<doub
 
   double k = dmn.prop.at(PhysicalPropertyType::darcy_permeability);
   double source = dmn.prop.at(PhysicalPropertyType::source_term);
-  double beta_0 = dmn.prop.at(PhysicalPropertyType::darcy_media_compressibility);
+  double beta_0 = dmn.prop.at(PhysicalPropertyType::Darcy_compressibility);
   double rho_0 = dmn.prop.at(PhysicalPropertyType::fluid_density);
   double mu = dmn.prop.at(PhysicalPropertyType::darcy_fluid_viscosity);
 

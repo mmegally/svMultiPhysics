@@ -420,7 +420,7 @@ enum class PhysicalPropertyType
   ctau_C = 14,
   brinkman_inverse_permeability = 15,
   darcy_permeability = 16,
-  darcy_media_compressibility = 17,
+  darcy_compressibility = 17,
   darcy_fluid_viscosity = 18
 };
 

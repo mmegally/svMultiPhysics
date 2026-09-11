@@ -2054,8 +2054,8 @@ DomainParameters::DomainParameters() {
   set_parameter("Poisson_ratio", 0.3, !required, poisson_ratio);
   
   set_parameter("Darcy_permeability", 1e-15, !required, darcy_permeability);
-  set_parameter("Darcy_media_compressibility", 0.0, !required,
-                darcy_media_compressibility);
+  set_parameter("Darcy_compressibility", 0.0, !required,
+                darcy_compressibility);
   set_parameter("Darcy_fluid_viscosity", 1.0, !required, darcy_fluid_viscosity);
 
   set_parameter("Relative_tolerance", 1e-4, !required, relative_tolerance);

@@ -1586,8 +1586,8 @@ void read_domain(Simulation* simulation, EquationParameters* eq_params, eqType& 
             rtmp = domain_params->darcy_permeability.value();
           break;
 
-          case PhysicalPropertyType::darcy_media_compressibility:
-            rtmp = domain_params->darcy_media_compressibility.value();
+          case PhysicalPropertyType::darcy_compressibility:
+            rtmp = domain_params->darcy_compressibility.value();
           break;
 
           case PhysicalPropertyType::darcy_fluid_viscosity:
